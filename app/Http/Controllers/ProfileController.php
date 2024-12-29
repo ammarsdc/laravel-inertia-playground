@@ -18,6 +18,14 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): Response
     {
+        $tripledots = [
+            'triple_dots_1' => Inertia::lazy(fn () => 'bcda1'),
+            'triple_dots_2' => 'bcda2',
+            'triple_dots_3' => [
+                'a1' => Inertia::lazy(fn () => 'bcda1'),
+            ],
+        ];
+
         return Inertia::render('Profile/Edit', [
             'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
             'status' => session('status'),
@@ -33,6 +41,7 @@ class ProfileController extends Controller
                 'a' => Inertia::lazy(fn () => 'abc'),
                 'b' => Inertia::lazy(fn () => 'def'),
             ]),
+            ...$tripledots,
         ]);
     }
 

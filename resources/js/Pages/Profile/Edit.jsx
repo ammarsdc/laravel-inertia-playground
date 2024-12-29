@@ -22,6 +22,18 @@ export default function Edit({ mustVerifyEmail, status }) {
                         <section>
                             <header>
                                 <h2 className="mb-3 text-lg font-medium text-gray-900">
+                                    Triple Dots
+                                </h2>
+                            </header>
+                        </section>
+
+                        <Link href="?tdots=true" only={['triple_dots_1']}>Load</Link>
+                    </div>
+
+                    <div className="bg-white p-4 shadow sm:rounded-lg sm:p-8">
+                        <section>
+                            <header>
+                                <h2 className="mb-3 text-lg font-medium text-gray-900">
                                     Nested
                                 </h2>
                             </header>
